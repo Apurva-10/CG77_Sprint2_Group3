@@ -1,0 +1,148 @@
+        -:    0:Source:main.cpp
+        -:    0:Graph:main.gcno
+        -:    0:Data:main.gcda
+        -:    0:Runs:1
+        -:    1:/************************************************************************
+        -:    2:The Oozy Snacks Bar Online Delivery System ---- Main
+        -:    3:*************************************************************************/
+        -:    4:#include <bits/stdc++.h>
+        -:    5:#include "functions.cpp"
+        -:    6:#include <thread>
+        -:    7:#include <mutex>
+        -:    8:#include <memory>
+function main called 1 returned 100% blocks executed 86%
+        1:    9:int main()
+        -:   10:{
+        1:   11:   int (*fun_ptr_arr[])()= {customer_registration, new_order, show_all_orders, show_product,consult_order,show_delivery, begin_delivery, file_maintenance};
+        -:   12:
+        1:   13:    int ch=0;
+       1*:   14:    while(ch != 9)
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        -:   15:    {
+        1:   16:        cout<<"*****************************************************************************"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   17:        cout<<"The Oozy Snacks Bar Online Delivery System"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   18:        cout<<"*****************************************************************************"<<endl<<endl<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   19:        cout<<"1. Customer Registration"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   20:        cout<<"2. New Order"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   21:        cout<<"3. Show all orders"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   22:        cout<<"4. Product Availability List"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   23:        cout<<"5. Consult order"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   24:        cout<<"6. Show Delivery List"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   25:        cout<<"7. Begin Delivery"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   26:        cout<<"8. File Maintenance (only for Employees)"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        -:   27://	cout<<"9. Pending order"<<endl;
+        1:   28:        cout<<"9. Exit"<<endl;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   29:        cin>>ch;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   30:        if(ch < 1 || ch >10)
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    #####:   31:        cout<<"Invalid Choice."<<endl<<"Please Try again"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+        1:   32:	if(ch==9)
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:   33:		break;
+        -:   34:	else
+    #####:   35:        (*fun_ptr_arr[ch-1])();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   36:    }
+        -:   37:  //  delete fun_ptr_arr;
+        1:   38:return 0;
+        -:   39:}

@@ -1,0 +1,72 @@
+
+cguser16@instance-1:~/Project$ ./ut
+testsd::test_customer_registrationEnter Customer Name(min 3 & max 10 characters)
+Apurva
+Enter Valid phone number
+7894561230                                      
+Enter customer email(min 3 & max 10 characters)
+a@d.c
+Enter Valid pass(min 3 & max 8 characters)
+apurva
+***************************************************************
+Customer id : 101
+Name : Apurva
+Email : a@d.c
+Phone number : 7894561230
+***************************************************************
+
+Customer Added Successfully 
+ : assertion
+testsd::test_add_productEnter Product Name(min 3 & max 10 characters)
+Lays
+Enter Product Desc(min 3 & max 20 characters)
+Crispy
+Units Available
+200
+Enter Unit price
+20
+***************************************************************
+Product id : 101
+Name : Lays
+Description : 
+Unit Price : 20
+Units Available in stock : 200
+***************************************************************
+
+product added Successfully
+ : assertion
+testsd::test_modify_customerEnter customer ID
+101
+1. Modify name
+2. Modify email
+3. Modify Phone number
+4. Delete customer
+5. Back to menu
+1
+Enter Customer Name(min 3 & max 10 characters)
+Chips
+Name modified
+1. Modify name
+2. Modify email
+3. Modify Phone number
+4. Delete customer
+5. Back to menu
+5
+ : assertion
+test.cpp:53:Assertion
+Test name: testsd::test_customer_registration
+assertion failed
+- Expression: 2==customer_registration()
+
+test.cpp:59:Assertion
+Test name: testsd::test_add_product
+assertion failed
+- Expression: 4==add_product()
+
+test.cpp:67:Assertion
+Test name: testsd::test_modify_customer
+assertion failed
+- Expression: 3==modify_customer()
+
+Failures !!!
+Run: 3   Failure total: 3   Failures: 3   Errors: 0

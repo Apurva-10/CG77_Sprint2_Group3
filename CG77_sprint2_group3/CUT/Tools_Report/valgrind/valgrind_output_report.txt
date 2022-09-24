@@ -1,0 +1,14 @@
+==190538== Memcheck, a memory error detector
+==190538== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==190538== Using Valgrind-3.16.1 and LibVEX; rerun with -h for copyright info
+==190538== Command: ./a.out
+==190538== 
+==190538== 
+==190538== HEAP SUMMARY:
+==190538==     in use at exit: 0 bytes in 0 blocks
+==190538==   total heap usage: 5 allocs, 5 frees, 75,248 bytes allocated
+==190538== 
+==190538== All heap blocks were freed -- no leaks are possible
+==190538== 
+==190538== For lists of detected and suppressed errors, rerun with: -s
+==190538== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

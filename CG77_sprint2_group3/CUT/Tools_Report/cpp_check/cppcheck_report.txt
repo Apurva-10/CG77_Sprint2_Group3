@@ -1,0 +1,68 @@
+classes.cpp:32:9: performance: Variable 'pname' is assigned in constructor body. Consider performing initialization in initialization list. [useInitializationList]
+        pname=name;
+        ^
+classes.cpp:33:9: performance: Variable 'desc' is assigned in constructor body. Consider performing initialization in initialization list. [useInitializationList]
+        desc=des;
+        ^
+classes.cpp:60:9: performance: Variable 'cname' is assigned in constructor body. Consider performing initialization in initialization list. [useInitializationList]
+        cname=name;
+        ^
+classes.cpp:61:9: performance: Variable 'email' is assigned in constructor body. Consider performing initialization in initialization list. [useInitializationList]
+        email=mail;
+        ^
+classes.cpp:62:9: performance: Variable 'phone' is assigned in constructor body. Consider performing initialization in initialization list. [useInitializationList]
+        phone=ph;
+        ^
+classes.cpp:63:9: performance: Variable 'pass' is assigned in constructor body. Consider performing initialization in initialization list. [useInitializationList]
+        pass=p;
+        ^
+classes.cpp:88:9: performance: Variable 'pname' is assigned in constructor body. Consider performing initialization in initialization list. [useInitializationList]
+        pname=nm;
+        ^
+classes.cpp:27:56: performance: Function parameter 'name' should be passed by const reference. [passedByValue]
+    product(long long int id, int uaa,float upp,string name,string des)
+                                                       ^
+classes.cpp:27:68: performance: Function parameter 'des' should be passed by const reference. [passedByValue]
+    product(long long int id, int uaa,float upp,string name,string des)
+                                                                   ^
+classes.cpp:57:38: performance: Function parameter 'name' should be passed by const reference. [passedByValue]
+    customer(long long int id,string name,string mail, string ph,string p)
+                                     ^
+classes.cpp:57:50: performance: Function parameter 'mail' should be passed by const reference. [passedByValue]
+    customer(long long int id,string name,string mail, string ph,string p)
+                                                 ^
+classes.cpp:57:63: performance: Function parameter 'ph' should be passed by const reference. [passedByValue]
+    customer(long long int id,string name,string mail, string ph,string p)
+                                                              ^
+classes.cpp:57:73: performance: Function parameter 'p' should be passed by const reference. [passedByValue]
+    customer(long long int id,string name,string mail, string ph,string p)
+                                                                        ^
+classes.cpp:84:45: performance: Function parameter 'nm' should be passed by const reference. [passedByValue]
+    order(long long int id, float p, string nm, int req)
+                                            ^
+classes.cpp:105:41: performance: Function parameter 'ph' should be passed by const reference. [passedByValue]
+    final_order(long long int id,string ph,string name,int d,int x,vector <order> vord)
+                                        ^
+classes.cpp:105:51: performance: Function parameter 'name' should be passed by const reference. [passedByValue]
+    final_order(long long int id,string ph,string name,int d,int x,vector <order> vord)
+                                                  ^
+classes.cpp:390:38: performance: Function parameter 's' should be passed by const reference. [passedByValue]
+int final_order :: set_status(string s)
+                                     ^
+classes.cpp:107:35: style: Consider using std::copy algorithm instead of a raw loop. [useStlAlgorithm]
+        for(auto it : vord) items.push_back(it);
+                                  ^
+functions.cpp:42:15: style: Variable 'h' is assigned a value that is never used. [unreadVariable]
+    string s,h="";
+              ^
+functions.cpp:76:14: style: Variable 'op' is assigned a value that is never used. [unreadVariable]
+    string op="";
+             ^
+functions.cpp:94:15: style: Variable 'h' is assigned a value that is never used. [unreadVariable]
+    string s,h="";
+              ^
+functions.cpp:126:14: style: Variable 'op' is assigned a value that is never used. [unreadVariable]
+    string op="";
+             ^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingIncludeSystem]
+

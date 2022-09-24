@@ -1,0 +1,73 @@
+
+cguser16@instance-1:~/Project$ ./ut
+testsd::test_customer_registrationEnter Customer Name(min 3 & max 10 characters)
+Ojas
+Ojas
+Enter Valid phone number
+7580002002
+Enter customer email(min 3 & max 10 characters)
+o@b.h
+Enter Valid pass(min 3 & max 8 characters)
+ojas
+***************************************************************
+Customer id : 101
+Name : Ojas
+Email : o@b.h
+Phone number : 7580002002
+***************************************************************
+
+Customer Added Successfully 
+ : OK
+testsd::test_add_productEnter Product Name(min 3 & max 10 characters)
+Kurkure
+Kurkure
+Enter Product Desc(min 3 & max 20 characters)
+Spicy
+Units Available
+200
+Enter Unit price
+20
+***************************************************************
+Product id : 101
+Name : Kurkure
+Description : 
+Unit Price : 20
+Units Available in stock : 200
+***************************************************************
+
+product added Successfully
+ : OK
+testsd::test_modify_customerEnter customer ID
+101
+1. Modify name
+2. Modify email
+3. Modify Phone number
+4. Delete customer
+5. Back to menu
+1
+Enter Customer Name(min 3 & max 10 characters)
+Blue Lays
+Name modified
+1. Modify name
+
+product added Successfully
+ : OK
+testsd::test_modify_customerEnter customer ID
+101
+1. Modify name
+2. Modify email
+3. Modify Phone number
+4. Delete customer
+5. Back to menu
+1
+Enter Customer Name(min 3 & max 10 characters)
+Blue Lays
+Name modified
+1. Modify name
+2. Modify email
+3. Modify Phone number
+4. Delete customer
+5. Back to menu
+5
+ : OK
+OK (3)
