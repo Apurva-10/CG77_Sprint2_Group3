@@ -1,0 +1,987 @@
+[1:08 am, 27/09/2022] Ojas Capg: -:    0:Source:functions.cpp
+        -:    0:Graph:main.gcno
+        -:    0:Data:main.gcda
+        -:    0:Runs:1
+        -:    1:/************************
+        -:    2:The Oozy Snacks Bar Online Delivery System
+        -:    3:
+        -:    4:Filename - functions.cpp
+        -:    5:
+        -:    6:Decsription - This file consist of all the functions
+        -:    7:*************************/
+        -:    8:
+        -:    9:#include <bits/stdc++.h>
+        -:   10:#include <fstream>
+        -:   11:#include "classes.cpp"
+        -:   12:#include <termios.h>
+        -:   13:#include <unistd.h>
+        -:   14:#include <stdio.h>
+        -:   15:
+        -:   16:using namespace std;
+        -:   17:
+        -:   18:struct type_c
+        -:   19:{
+        -:   20:    long long int id;
+        -:   21:    char name[10],email[20],phone[10],pass[8];
+        -:   22:};
+        -:   23:struct type_p
+        -:   24:{
+        -:   25:    long long int id;
+        -:   26:    char name[10],desc[20];
+        -:   27:    int ua,up;
+        -:   28:};
+        -:   29:struct type_child_o
+        -:   30:{
+        -:   31:    int ur=0;
+        -:   32:    long long int pid=-1;
+        -:   33:    float up=0;
+        -:   34:    char pname[10];
+        -:   35:};
+        -:   36:struct type_o
+        -:   37:{
+        -:   38:    long long int order_id=0;
+        -:   39:    struct type_child_o items[3];
+        -:   40:    long long int cid=0;
+        -:   41:    char phone[10],cname[10];
+        -:   42:    float dist=0;
+        -:   43:    int status=0;
+        -:   44:    float total=0;
+        -:   45:};
+        -:   46:
+        -:   47:vector<order> vord;                //container of order type
+        -:   48:list<customer> cust;               //container of list type
+        -:   49:vector<final_order> ord;           //container of final order type
+        -:   50:stack<final_order> delivery_list;  //container of final prder type
+        -:   51:list<product> prod;                //container of product type
+        -:   52:
+        -:   53:
+        -:   54:int delivered=0;
+        -:   55:int customer_registration();
+        -:   56:int checkout();
+        -:   57:int new_order();
+        -:   58:int show_all_orders();
+        -:   59:int show_product();
+        -:   60:int consult_order();
+        -:   61:int show_delivery();
+        -:   62:int begin_delivery();
+        -:   63:int file_maintenance();
+        -:   64:int add_product();
+        -:   65:int modify_product();
+        -:   66:int modify_customer();
+        -:   67:int show_customer_list();
+        -:   68:bool sortbydist(final_order &a,final_order &b);
+        -:   69:int file_to_cust();
+        -:   70:int cust_to_file();
+        -:   71:int file_to_prod();
+        -:   72:int prod_to_file();
+        -:   73:int file_to_ord();
+        -:   74:int ord_to_file();
+        -:   75:string pass_magic();
+        -:   76:int show_order_by_min();
+        -:   77:string pass_magic();
+        -:   78:int getch();
+        -:   79:mutex mtx;                      //mutex for critical section
+        -:   80:
+        -:   81:/************************
+        -:   82:
+        -:   83:  Function Name - file_to_cust
+        -:   84:
+        -:   85:  Function Description - To read all the data of file to the list
+        -:   86:
+        -:   87:************************/
+        -:   88:
+function _Z12file_to_custv called 1 returned 100% blocks executed 67%
+        1:   89:int file_to_cust()
+        -:   90:{
+        -:   91:
+        1:   92:    ifstream fr("customer");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 never executed
+        1:   93:			if(fr)
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+branch  3 taken 1 (fallthrough)
+branch  4 taken …
+[1:09 am, 27/09/2022] Ojas Capg: #####:  752:        return 1;
+        -:  753:    }
+    #####:  754:    string choice;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  755:    int ch=0;
+    #####:  756:    while(ch != 5)
+branch  0 never executed
+branch  1 never executed
+        -:  757:    {
+        -:  758:	//sub menu for file maintenance
+    #####:  759:        cout<<"*************************"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  760:        cout<<"1. Add product"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  761:        cout<<"2. Modify Stock"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  762:        cout<<"3. Modify Customer"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  763:        cout<<"4. Customer List"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  764:        cout<<"5. Main menu"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  765:    try{
+    #####:  766:        getline(cin,choice);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  767:            if(choice[0]==' ' || !isdigit(choice[0]) || choice.size()>1) throw choice;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+branch 13 never executed
+branch 14 never executed
+call   15 never executed
+call   16 never executed
+call   17 never executed
+    #####:  768:            ch=stoi(choice);   //string to int
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  769:        switch(ch)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  770:        {
+    #####:  771:        case 1 :
+        -:  772:		{
+        -:  773:	   // thread creation
+    #####:  774:            thread t1(&add_product);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+call    4 never executed
+    #####:  775:	    t1.join();//join thread
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  776:		}
+    #####:  777:            break;
+    #####:  778:        case 2:
+        -:  779:	    {
+    #####:  780:            thread t2(&modify_product);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+call    4 never executed
+    #####:  781:	    t2.join();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  782:	    }
+    #####:  783:            break;
+    #####:  784:        case 3:
+    #####:  785:            modify_customer();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  786:        case 4 :
+    #####:  787:            show_customer_list();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  788:            break;
+    #####:  789:        case 5:
+    #####:  790:            break;
+    #####:  791:        default :
+    #####:  792:            throw(ch);
+call    0 never executed
+call    1 never executed
+        -:  793:            break;
+        -:  794:
+        -:  795:        }
+        -:  796:    }
+    =====:  797:    catch(string s)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+call   10 never executed
+        -:  798:        {
+    =====:  799:            cout<<"Invalid Input Exception\nPlease Try again."<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  800:        }
+    =====:  801:        catch(int ch)
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  802:        {
+    =====:  803:            cout<<"Invalid Choice Exception\nPlease Try again."<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  804:        }
+        -:  805:
+        -:  806:    }
+        -:  807:
+    #####:  808:}
+        -:  809:
+        -:  810:/************************
+        -:  811:
+        -:  812:  Function Name - add_product
+        -:  813:
+        -:  814:  Function Description - To add new product
+        -:  815:
+        -:  816:************************/
+        -:  817:
+function _Z11add_productv called 0 returned 0% blocks executed 0%
+    #####:  818:int add_product()
+        -:  819:{
+    #####:  820:    mtx.lock();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  821:    product tmp;
+call    0 never executed
+call    1 never executed
+        -:  822:    long long int id;
+    #####:  823:    if(prod.size()>0)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  824:    for(auto it : prod)
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+call   10 never executed
+        -:  825:    {
+    #####:  826:	    id=it.get_id();
+call    0 never executed
+        -:  827:    }
+    #####:  828:    else id=100;
+    #####:  829:    tmp.set_id(id+1);
+call    0 never executed
+    #####:  830:    tmp.set_name();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  831:    tmp.set_desc();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  832:    tmp.set_ua();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  833:    tmp.set_up();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  834:    prod.push_back(tmp); //push data back to list
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  835:    tmp.show_product();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  836:    cout<<"product added Successfully"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  837:    mtx.unlock();
+call    0 never executed
+    #####:  838:    return 0;
+call    0 never executed
+        -:  839:}
+        -:  840:
+        -:  841:/************************
+        -:  842:
+        -:  843:  Function Name - modify_product
+        -:  844:
+        -:  845:  Function Description - To edit details of the product by entering its
+        -:  846:                         product id
+        -:  847:
+        -:  848:************************/
+        -:  849:
+function _Z14modify_productv called 0 returned 0% blocks executed 0%
+    #####:  850:int modify_product()
+        -:  851:{
+    #####:  852:    mtx.lock();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  853:    int id;
+    #####:  854:    cout<<"Enter Product ID"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  855:    cin>>id;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  856:    cin.ignore();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  857:    int flag=0;
+    #####:  858:    for(list<product>::iterator it = prod.begin();it!=prod.end();++it)   //to access complete list
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+        -:  859:    {
+    #####:  860:        if(it->get_id()==id)   //to check id present or not
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  861:	{
+    #####:  862:            flag=1;
+    #####:  863:            string choice;
+call    0 never executed
+call    1 never executed
+    #####:  864:            int ch=0;
+    #####:  865:                cout<<"1. Modify name"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  866:                cout<<"2. Modify description"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  867:                cout<<"3. Modify Unit Price"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  868:                cout<<"4. Modify Units Available"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  869:                cout<<"5. Delete product"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  870:		cout<<"6. Back Menu"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  871:		//Exception Handling
+        -:  872:            try{
+    #####:  873:                getline(cin,choice);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  874:            if(choice[0]==' ' || !isdigit(choice[0]) || choice.size()>1) throw choice;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+branch 13 never executed
+branch 14 never executed
+call   15 never executed
+call   16 never executed
+call   17 never executed
+    #####:  875:            ch=stoi(choice);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  876:
+    #####:  877:                switch(ch)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+        -:  878:                {
+    #####:  879:                case 1 :
+        -:  880:
+    #####:  881:                    it->set_name();
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  882:                    cout<<"Name modified"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  883:                    break;
+    #####:  884:                case 2:
+    #####:  885:                    it->set_desc();
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  886:                    cout<<"Description modified"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  887:                    break;
+    #####:  888:                case 3 :
+    #####:  889:                    it->set_up();
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  890:                    cout<<"Unit price modified"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  891:                    break;
+    #####:  892:                case 4 :
+    #####:  893:                    it->set_ua();
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  894:                    cout<<"Stock availability modified"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  895:                    break;
+    #####:  896:                case 5:
+    #####:  897:                    it=prod.erase(it);    //to delete product
+call    0 never executed
+call    1 never executed
+    #####:  898:                    break;
+    #####:  899:		case 6:
+    #####:  900:		    return 0;
+    #####:  901:                default :
+    #####:  902:                    throw ch;
+call    0 never executed
+call    1 never executed
+        -:  903:                    break;
+        -:  904:                }
+        -:  905:            }
+    =====:  906:        catch(string s)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+call   10 never executed
+        -:  907:        {
+    =====:  908:            cout<<"Invalid Input Exception\nPlease Try again."<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  909:        }
+    =====:  910:        catch(int ch)
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  911:        {
+    =====:  912:            cout<<"Invalid Choice Exception\nPlease Try again."<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  913:        }
+        -:  914:
+        -:  915:
+        -:  916:        }
+        -:  917:    }
+    #####:  918:    if(flag==0){
+branch  0 never executed
+branch  1 never executed
+    #####:  919:        cout<<"Product ID not found"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  920:    }
+    #####:  921:    mtx.unlock();
+call    0 never executed
+    #####:  922:    return 0;
+        -:  923:}
+        -:  924:
+        -:  925:/************************
+        -:  926:
+        -:  927:  Function Name - modify_customer
+        -:  928:
+        -:  929:  Function Description - To edit details of the customer by entering their
+        -:  930:                         customer id
+        -:  931:
+        -:  932:************************/
+        -:  933:
+function _Z15modify_customerv called 0 returned 0% blocks executed 0%
+    #####:  934:int modify_customer()
+        -:  935:{
+        -:  936:    int id;
+    #####:  937:    cout<<"Enter customer ID"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  938:    cin>>id;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  939:    cin.ignore();      //clear buffer
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  940:    int flag=0;
+    #####:  941:    for(list<customer>::iterator it = cust.begin();it!=cust.end();++it)   //access complete list using iterator it
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+        -:  942:    {
+    #####:  943:        if(it->get_id()==id){
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  944:            flag=1;
+    #####:  945:            string choice;
+call    0 never executed
+call    1 never executed
+    #####:  946:            int ch=0;
+    #####:  947:                cout<<"1. Modify name"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  948:                cout<<"2. Modify email"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  949:                cout<<"3. Modify Phone number"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  950:          try{      cout<<"4. Delete customer"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  951:		  cout<<"5. Back menu"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  952:
+    #####:  953:            getline(cin,choice);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  954:            if(choice[0]==' ' || !isdigit(choice[0]) || choice.size()>1) throw choice;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+branch 13 never executed
+branch 14 never executed
+call   15 never executed
+call   16 never executed
+call   17 never executed
+    #####:  955:            ch=stoi(choice);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  956:                switch(ch)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  957:                {
+    #####:  958:                case 1 :
+    #####:  959:                    it->set_name();
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  960:                    cout<<"Name modified"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  961:                    break;
+    #####:  962:                case 2:
+    #####:  963:                    it->set_email();
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  964:                    cout<<"email modified"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  965:                    break;
+        -:  966:
+    #####:  967:                case 3 :
+    #####:  968:                    it->set_phone();
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  969:                    cout<<"Phone number modified"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  970:                    break;
+        -:  971:
+    #####:  972:                case 4 :
+        -:  973:
+    #####:  974:                    it=cust.erase(it);            //to delete customer
+call    0 never executed
+call    1 never executed
+    #####:  975:                    break;
+    #####:  976:                case 5:
+    #####:  977:                   return 0;
+    #####:  978:                default :
+    #####:  979:                    throw ch;
+call    0 never executed
+call    1 never executed
+        -:  980:                    break;
+        -:  981:                }
+        -:  982:          }
+    =====:  983:          catch(string s)
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+call   10 never executed
+        -:  984:        {
+    =====:  985:            cout<<"Invalid Input Exception\nPlease Try again."<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  986:        }
+    =====:  987:        catch(int ch)
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  988:        {
+    =====:  989:            cout<<"Invalid Choice Exception\nPlease Try again."<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  990:        }
+        -:  991:
+        -:  992:        }
+        -:  993:    }
+    #####:  994:    if(flag==0){
+branch  0 never executed
+branch  1 never executed
+    #####:  995:        cout<<"Customer ID not found"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  996:    }
+    #####:  997:    return 0;
+        -:  998:}
+        -:  999:
+        -: 1000:/************************
+        -: 1001:
+        -: 1002:  Function Name - show_customer_list
+        -: 1003:
+        -: 1004:  Function Description - To show details of all customer
+        -: 1005:
+        -: 1006:************************/
+        -: 1007:
+function _Z18show_customer_listv called 0 returned 0% blocks executed 0%
+    #####: 1008:int show_customer_list()
+        -: 1009:{
+    #####: 1010:    if(cust.size()==0)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1011:    {
+    #####: 1012:        cout<<"Empty Customer list"<<endl;
+call    0 never executed
+call    1 never executed
+    #####: 1013:        return 0;
+        -: 1014:    }
+    #####: 1015:    for(auto it : cust) it.show_customer();
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+call   14 never executed
+        -: 1016:
+    #####: 1017:    return 0;
+        -: 1018:}
+        -: 1019:
+        -: 1020:/************************
+        -: 1021:
+        -: 1022:  Function Name - sort_by_dist
+        -: 1023:
+        -: 1024:  Function Description - To sort orders on the basis of distance
+        -: 1025:
+        -: 1026:************************/
+        -: 1027:
+function Z10sortbydistR11final_orderS0 called 0 returned 0% blocks executed 0%
+    #####: 1028:bool sortbydist(final_order &a,final_order &b)
+        -: 1029:{
+    #####: 1030:    return (a.get_dist() < b.get_dist());
+call    0 never executed
+call    1 never executed
+        -: 1031:}
+        -: 1032:
+        -: 1033:
+function _Z5getchv called 0 returned 0% blocks executed 0%
+    #####: 1034:int getch() {
+        -: 1035:    int ch;
+        -: 1036:    struct termios t_old, t_new;
+        -: 1037:
+    #####: 1038:    tcgetattr(STDIN_FILENO, &t_old);
+call    0 never executed
+    #####: 1039:    t_new = t_old;
+    #####: 1040:    t_new.c_lflag &= ~(ICANON | ECHO);
+    #####: 1041:    tcsetattr(STDIN_FILENO, TCSANOW, &t_new);
+call    0 never executed
+        -: 1042:
+    #####: 1043:    ch = getchar();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1044:
+    #####: 1045:    tcsetattr(STDIN_FILENO, TCSANOW, &t_old);
+call    0 never executed
+    #####: 1046:    return ch;
+        -: 1047:}
+        -: 1048:
+        -: 1049:
+function _Z10pass_magicB5cxx11v called 0 returned 0% blocks executed 0%
+    #####: 1050:string pass_magic()
+        -: 1051:{
+    #####: 1052:  const char BACKSPACE=127;
+    #####: 1053:  const char RETURN=10;
+        -: 1054:
+    #####: 1055:  string password;
+call    0 never executed
+    #####: 1056:  unsigned char ch=0;
+        -: 1057:
+    #####: 1058:  while((ch=getch())!=RETURN)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+        -: 1059:    {
+    #####: 1060:       if(ch==BACKSPACE)
+branch  0 never executed
+branch  1 never executed
+        -: 1061:         {
+    #####: 1062:            if(password.length()!=0)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1063:              {
+    #####: 1064:                 cout <<"\b \b";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1065:                 password.resize(password.length()-1);
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -: 1066:              }
+        -: 1067:         }
+        -: 1068:       else
+        -: 1069:         {
+    #####: 1070:             password+=ch;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1071:                 cout <<'*';
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -: 1072:         }
+        -: 1073:    }
+    #####: 1074:  cout <<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####: 1075:  return password;
+        -: 1076:}

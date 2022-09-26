@@ -1,0 +1,1240 @@
+-:    0:Source:classes.cpp
+        -:    0:Graph:main.gcno
+        -:    0:Data:main.gcda
+        -:    0:Runs:1
+        -:    1:/********************************
+        -:    2:
+        -:    3:  The Oozy Snacks Bar Online Delivery System
+        -:    4:
+        -:    5:  Filename -classes.cpp
+        -:    6:
+        -:    7:  Description -This file consist of all the classes used in Oozy snack bar online delivery system
+        -:    8:
+        -:    9:
+        -:   10:*********************************/
+        -:   11:
+        -:   12:#include <bits/stdc++.h>
+        -:   13:#include <termios.h>
+        -:   14:#include <unistd.h>
+        -:   15:#include <stdio.h>
+        -:   16:using namespace std;
+function Z11valid_emailNSt7_cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   17:bool valid_email(string s)      //validation check for email
+        -:   18:{
+    #####:   19:    int fa=0,fb=0;
+    #####:   20:    if(!isalpha(s[0])) return false;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   21:    for(int i=0;i<s.size()-2;i++)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   22:    {
+    #####:   23:        if(s[i]==' ') return false;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   24:        if(s[i]=='@') fa=i;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   25:        if(s[i]=='.') fb=i;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   26:    }
+    #####:   27:    if(fa==0 || fb==0) return false;
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   28:    if(fa < fb) return true;
+branch  0 never executed
+branch  1 never executed
+    #####:   29:    return false;
+        -:   30:}
+        -:   31:
+function Z12valid_lengthNSt7_cxx1112basic_stringIcSt11char_traitsIcESaIcEEEii called 0 returned 0% blocks executed 0%
+    #####:   32:bool valid_length(string s,int m,int n)    //validation to check length of name,address,description
+        -:   33:{
+    #####:   34:    if(s[0]==' ')
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   35:        return false;
+    #####:   36:    if(s.size()<m || s.size()>n)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+    #####:   37:        return false;
+    #####:   38:    return true;
+        -:   39:}
+        -:   40:
+function Z11valid_phoneNSt7_cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   41:bool valid_phone(string s)       //validation to check phone number
+        -:   42:{
+    #####:   43:    if(s==" " || s[0]=='0')
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+    #####:   44:        return false;
+    #####:   45:    int cnt=0;
+    #####:   46:    for(int i=0;i<s.size();i++) if(isdigit(s[i])) cnt++;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:   47:    if(cnt==10 && cnt==s.size()) return true;
+branch  0 never executed
+branch  1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:   48:    return false;
+        -:   49:}
+function Z13valid_integerNSt7_cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   50:bool valid_integer(string s)    //validation to check unit available and price
+        -:   51:{
+    #####:   52:    int cnt=0;
+    #####:   53:    for(int i=0;i<s.size();i++)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   54:    {
+    #####:   55:        if(s[i]==' ' || s[0]=='0') return false;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+    #####:   56:        if(isdigit(s[i])) cnt++;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   57:    }
+    #####:   58:    if(cnt==s.size()) return true;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   59:    return false;
+        -:   60:}
+        -:   61:using namespace std;
+        -:   62:class details
+        -:   63:{
+        -:   64:	public :
+        -:   65:
+        -:   66:    string name;
+        -:   67:    long long int id;
+        -:   68:    int set_name();
+        -:   69:    int set_name(string s);
+        -:   70:    int set_id(long long int i);
+        -:   71:   long long int get_id();
+        -:   72:    string get_name();
+        -:   73:};
+        -:   74:class product : public details     //product class to add new product
+        -:   75:{
+        -:   76:
+        -:   77:    int ua;
+        -:   78:    float up;
+        -:   79:    string desc;
+        -:   80:public:
+function _ZN7productC2Ev called 0 returned 0% blocks executed 0%
+    #####:   81:    product()
+    #####:   82:    {
+call    0 never executed
+call    1 never executed
+        -:   83:
+    #####:   84:    }
+function ZN7productC2ExifNSt7cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5 called 3 returned 100% blocks executed 67%
+        3:   85:    product(long long int i, int uaa,float upp,string nm,string des)
+        3:   86:    {
+call    0 returned 3
+call    1 returned 3
+call    2 never executed
+call    3 never executed
+        3:   87:        id=i;
+        3:   88:        ua=uaa;
+        3:   89:        up=upp;
+        3:   90:        name=nm;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   91:        desc=des;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   92:    }
+        -:   93:    int set_up();
+        -:   94:    int set_ua();
+        -:   95:    int set_ua(int x);
+        -:   96:    int set_desc();
+        -:   97:    float get_up();
+        -:   98:    int get_ua();
+        -:   99:    string get_desc();
+        -:  100:    int show_product();
+        -:  101:};
+        -:  102:
+        -:  103:class customer : public details        //customer class to add new customer
+        -:  104:{
+        -:  105:
+        -:  106:    string email,phone,pass;
+        -:  107:public:
+function _ZN8customerC2Ev called 0 returned 0% blocks executed 0%
+    #####:  108:    customer()
+    #####:  109:    {
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+        -:  110:
+    #####:  111:    }
+function ZN8customerC2ExNSt7cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_S5_S5 called 1 returned 100% blocks executed 59%
+        1:  112:    customer(long long int i,string nm,string mail, string ph,string p)
+        1:  113:    {
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 never executed
+call    5 never executed
+call    6 never executed
+call    7 never executed
+        1:  114:        id=i;
+        1:  115:        name=nm;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  116:        email=mail;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  117:        phone=ph;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  118:        pass=p;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  119:    }
+        -:  120:    int set_email();
+        -:  121:    int set_phone();
+        -:  122:    int set_pass();
+        -:  123:    long long int get_cid();
+        -:  124:    string get_cname();
+        -:  125:    string get_email();
+        -:  126:    string get_phone();
+        -:  127:    string get_pass();
+        -:  128:    int show_customer();
+        -:  129:    int getch();
+        -:  130:    string pass_magic();
+        -:  131:};
+        -:  132:
+        -:  133:class order
+        -:  134:{
+        -:  135:    int ur;
+        -:  136:    long long int pid;
+        -:  137:    float up;
+        -:  138:    string pname;
+        -:  139:public:
+function ZN5orderC2ExfNSt7_cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi called 6 returned 100% blocks executed 80%
+        6:  140:    order(long long int id, float p, string nm, int req)
+        6:  141:    {
+call    0 returned 6
+call    1 never executed
+        6:  142:        pid=id;
+        6:  143:        up=p;
+        6:  144:        pname=nm;
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        6:  145:        ur=req;
+        6:  146:    }
+        -:  147:    int get_ur();
+        -:  148:    long long int get_pid();
+        -:  149:    float get_up();
+        -:  150:    string get_pname();
+        -:  151:};
+        -:  152:
+        -:  153:class final_order               //final_order class to add final order
+        -:  154:{
+        -:  155:    long long int order_id;
+        -:  156:    long long int cid;
+        -:  157:    string phone,cname;
+        -:  158:    float dist;
+        -:  159:    string status;
+        -:  160:    float total=0;
+        -:  161:public :
+        -:  162:    vector<order> items;
+function ZN11final_orderC2ExNSt7_cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iiSt6vectorI5orderSaIS7_EE called 2 returned 100% blocks executed 67%
+        2:  163:    final_order(long long int id,string ph,string name,int d,int x,vector <order> vord)
+        2:  164:    {
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+call    3 returned 2
+call    4 never executed
+call    5 never executed
+call    6 never executed
+call    7 never executed
+        8:  165:        for(auto it : vord)
+call    0 returned 2
+call    1 returned 2
+call    2 returned 8
+branch  3 taken 6 (fallthrough)
+branch  4 taken 2
+call    5 returned 6
+call    6 returned 6
+branch  7 taken 6 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 6
+call   10 never executed
+        -:  166:        {
+        6:  167:            items.push_back(it);
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        6:  168:            total+=(it.get_up() * it.get_ur());
+call    0 returned 6
+call    1 returned 6
+call    2 returned 6
+        -:  169:        }
+        2:  170:        cid=id;
+        2:  171:        phone=ph;
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  172:        cname=name;
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  173:        dist=d;
+        2:  174:        order_id=x+101;
+        2:  175:        status="In progress";
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  176:
+        2:  177:    }
+        -:  178:    int set_status(string s);
+        -:  179:    string get_status();
+        -:  180:    int show_final_order();
+        -:  181:    long long int get_cid();
+        -:  182:    string get_phone();
+        -:  183:    string get_cname();
+        -:  184:    float get_dist();
+        -:  185:    long long int get_order_id();
+        -:  186:    float get_total_amount();
+        -:  187:
+        -:  188:};
+        -:  189:
+        -:  190:
+function _ZN7details6set_idEx called 0 returned 0% blocks executed 0%
+    #####:  191:int details :: set_id(long long int i)
+        -:  192:{
+    #####:  193:    id=i;
+    #####:  194:    return 0;
+        -:  195:}
+        -:  196:
+function _ZN7details8set_nameEv called 0 returned 0% blocks executed 0%
+    #####:  197:int details :: set_name()
+        -:  198:{
+    #####:  199:    string nm;
+call    0 never executed
+call    1 never executed
+        -:  200:    while(1){
+    #####:  201:        cout<<"Enter Name(min 3 & max 10 characters)"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  202:        getline(cin, nm);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  203:	int f=1;
+    #####:  204:	for(int i=0;i<nm.size();i++) if(!isalpha(nm[i])) if(nm[i] != ' ') f=0;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+branch 11 never executed
+branch 12 never executed
+    #####:  205:        if(valid_length(nm,3,10) && f){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+branch 15 never executed
+branch 16 never executed
+call   17 never executed
+    #####:  206:                break;
+        -:  207:
+        -:  208:        }
+    #####:  209:        cout<<"Invalid Input"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  210:        continue;
+    #####:  211:    }
+    #####:  212:    name=nm;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  213:    return 0;
+call    0 never executed
+        -:  214:}
+function ZN7details8set_nameENSt7_cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:  215:int details :: set_name(string s)
+        -:  216:{
+    #####:  217:	name=s;
+call    0 never executed
+    #####:  218:	return 0;
+        -:  219:}
+function _ZN7details6get_idEv called 4 returned 100% blocks executed 100%
+        4:  220:long long int details :: get_id()
+        -:  221:{
+        4:  222:    return id;
+        -:  223:}
+        -:  224:
+function _ZN7details8get_nameB5cxx11Ev called 4 returned 100% blocks executed 100%
+        4:  225:string details :: get_name()
+        -:  226:{
+        4:  227:    return name;
+call    0 returned 4
+        -:  228:}
+        -:  229:
+        -:  230:
+function _ZN7product6set_upEv called 0 returned 0% blocks executed 0%
+    #####:  231:int product :: set_up()
+        -:  232:{
+    #####:  233:    string price;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  234:    while(1){
+    #####:  235:    cout<<"Enter Unit price"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  236:    getline(cin, price);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  237:    if(valid_integer(price)==false){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+    #####:  238:       cout<<"Invalid Input"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  239:       continue;
+        -:  240:    }
+    #####:  241:    else break;}
+    #####:  242:    stringstream ip(price);
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+    #####:  243:    ip>>up;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  244:    return 0;
+call    0 never executed
+        -:  245:
+        -:  246:}
+        -:  247:
+function _ZN7product6set_uaEv called 0 returned 0% blocks executed 0%
+    #####:  248:int product :: set_ua()
+        -:  249:{
+    #####:  250:    string unit;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  251:    while(1){
+    #####:  252:        cout<<"Units Available"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  253:        getline(cin, unit);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  254:        if(valid_integer(unit)==false ){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+    #####:  255:            cout<<"Invalid Input"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  256:            continue;
+        -:  257:        }
+    #####:  258:        else break;
+        -:  259:    }
+    #####:  260:    stringstream ip(unit);
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+    #####:  261:    ip>>ua;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  262:    return 0;
+call    0 never executed
+        -:  263:}
+        -:  264:
+function _ZN7product6set_uaEi called 0 returned 0% blocks executed 0%
+    #####:  265:int product :: set_ua(int x)
+        -:  266:{
+    #####:  267:    ua=x;
+    #####:  268:    return 0;
+        -:  269:}
+        -:  270:
+function _ZN7product8set_descEv called 0 returned 0% blocks executed 0%
+    #####:  271:int product :: set_desc()
+        -:  272:{
+        -:  273:
+    #####:  274:    string nm;
+call    0 never executed
+call    1 never executed
+        -:  275:    while(1){
+    #####:  276:        cout<<"Enter Product Desc(min 3 & max 20 characters)"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  277:        getline(cin, nm);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  278:        if(valid_length(nm,3,20)){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+    #####:  279:                break;
+        -:  280:
+        -:  281:        }
+    #####:  282:        cout<<"Invalid Input"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  283:        continue;
+        -:  284:    }
+    #####:  285:    desc=nm;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  286:    return 0;
+call    0 never executed
+        -:  287:}
+        -:  288:
+        -:  289:
+function _ZN7product6get_upEv called 3 returned 100% blocks executed 100%
+        3:  290:float product :: get_up()
+        -:  291:{
+        3:  292:    return up;
+        -:  293:}
+        -:  294:
+function _ZN7product6get_uaEv called 3 returned 100% blocks executed 100%
+        3:  295:int product :: get_ua()
+        -:  296:{
+        3:  297:    return ua;
+        -:  298:}
+        -:  299:
+function _ZN7product8get_descB5cxx11Ev called 3 returned 100% blocks executed 100%
+        3:  300:string product :: get_desc()
+        -:  301:{
+        3:  302:    return desc;
+call    0 returned 3
+        -:  303:}
+        -:  304:
+function _ZN7product12show_productEv called 0 returned 0% blocks executed 0%
+    #####:  305:int product :: show_product()
+        -:  306:{
+    #####:  307:        cout<<"*********************"<<endl;
+call    0 never executed
+call    1 never executed
+    #####:  308:        cout<<"Product id : "<<get_id()<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+    #####:  309:        cout<<"Name       : "<<get_name()<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    #####:  310:        cout<<"Description: "<<get_desc()<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+call    8 never executed
+call    9 never executed
+    #####:  311:        cout<<"Unit Price : "<<get_up()<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+    #####:  312:        cout<<"Units Available in stock : "<<get_ua()<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+        -:  313://	cout<<get_pid()<<"\t\t\t"<<get_pname()<<"\t\t"<<get_desc()<<"\t\t\t"<<get_up()<<"\t\t"<<get_ua()<<endl;
+    #####:  314:        cout<<"*********************"<<endl<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  315:        return 0;
+        -:  316:}
+        -:  317:
+        -:  318:
+function _ZN8customer9set_emailEv called 0 returned 0% blocks executed 0%
+    #####:  319:int customer :: set_email()
+        -:  320:{
+    #####:  321:    string nm;
+call    0 never executed
+call    1 never executed
+        -:  322:    while(1){
+    #####:  323:        cout<<"Enter customer email(min 3 & max 20 characters)"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  324:
+    #####:  325:        getline(cin, nm);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  326:
+    #####:  327:        transform(nm.begin(), nm.end(), nm.begin(), ::toupper);
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  328:        if(valid_length(nm,5,20) && valid_email(nm)){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+branch 14 never executed
+branch 15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+branch 24 never executed
+branch 25 never executed
+call   26 never executed
+branch 27 never executed
+branch 28 never executed
+call   29 never executed
+    #####:  329:                break;
+        -:  330:
+        -:  331:        }
+    #####:  332:        cout<<"Invalid Input"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  333:        continue;
+        -:  334:
+        -:  335:    }
+    #####:  336:    email=nm;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  337:    return 0;
+call    0 never executed
+        -:  338:}
+        -:  339:
+function _ZN8customer9set_phoneEv called 0 returned 0% blocks executed 0%
+    #####:  340:int customer :: set_phone()
+        -:  341:{
+    #####:  342:    string nm;
+call    0 never executed
+call    1 never executed
+        -:  343:    while(1){
+    #####:  344:        cout<<"Enter Valid phone number"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  345:        getline(cin, nm);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  346:        if(valid_phone(nm)){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+    #####:  347:                break;
+        -:  348:
+        -:  349:        }
+    #####:  350:        cout<<"Invalid Input"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  351:        continue;
+        -:  352:    }
+    #####:  353:    phone=nm;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  354:    return 0;
+call    0 never executed
+        -:  355:}
+        -:  356:
+function _ZN8customer8set_passEv called 0 returned 0% blocks executed 0%
+    #####:  357:int customer :: set_pass()
+        -:  358:{
+        -:  359:
+    #####:  360:    string ipt;
+call    0 never executed
+call    1 never executed
+        -:  361:    while(1){
+    #####:  362:        cout<<"Enter Valid pass(min 3 & max 8 characters)"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  363:        ipt=pass_magic();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+call    4 never executed
+    #####:  364:        if(valid_length(ipt,3,8)){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+    #####:  365:                break;
+        -:  366:
+        -:  367:        }
+    #####:  368:        cout<<"Invalid Input"<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  369:        continue;
+        -:  370:    }
+    #####:  371:    pass=ipt;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  372:
+    #####:  373:    return 0;
+call    0 never executed
+        -:  374:}
+        -:  375:
+function _ZN8customer5getchEv called 0 returned 0% blocks executed 0%
+    #####:  376:int customer :: getch() {
+        -:  377:    int ch;
+        -:  378:    struct termios t_old, t_new;
+        -:  379:
+    #####:  380:    tcgetattr(STDIN_FILENO, &t_old);
+call    0 never executed
+    #####:  381:    t_new = t_old;
+    #####:  382:    t_new.c_lflag &= ~(ICANON | ECHO);
+    #####:  383:    tcsetattr(STDIN_FILENO, TCSANOW, &t_new);
+call    0 never executed
+        -:  384:
+    #####:  385:    ch = getchar();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  386:
+    #####:  387:    tcsetattr(STDIN_FILENO, TCSANOW, &t_old);
+call    0 never executed
+    #####:  388:    return ch;
+        -:  389:}
+        -:  390:
+function _ZN8customer10pass_magicB5cxx11Ev called 0 returned 0% blocks executed 0%
+    #####:  391:string customer :: pass_magic()
+        -:  392:{
+    #####:  393:  const char BACKSPACE=127;
+    #####:  394:  const char RETURN=10;
+        -:  395:
+    #####:  396:  string password;
+call    0 never executed
+    #####:  397:  unsigned char ch=0;
+    #####:  398:  while((ch=getch())!=RETURN)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+        -:  399:    {
+    #####:  400:       if(ch==BACKSPACE)
+branch  0 never executed
+branch  1 never executed
+        -:  401:         {
+    #####:  402:            if(password.length()!=0)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  403:              {
+        -:  404:
+    #####:  405:                 cout <<"\b \b";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  406:                 password.resize(password.length()-1);
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  407:              }
+        -:  408:         }
+        -:  409:       else
+        -:  410:         {
+    #####:  411:             password+=ch;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  412:
+    #####:  413:                 cout <<'*';
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  414:         }
+        -:  415:    }
+    #####:  416:  cout <<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  417:  return password;
+        -:  418:}
+        -:  419:
+        -:  420:
+function _ZN8customer9get_emailB5cxx11Ev called 1 returned 100% blocks executed 100%
+        1:  421:string customer :: get_email()
+        -:  422:{
+        1:  423:    return email;
+call    0 returned 1
+        -:  424:}
+        -:  425:
+function _ZN8customer9get_phoneB5cxx11Ev called 1 returned 100% blocks executed 100%
+        1:  426:string customer :: get_phone()
+        -:  427:{
+        1:  428:    return phone;
+call    0 returned 1
+        -:  429:}
+        -:  430:
+function _ZN8customer8get_passB5cxx11Ev called 1 returned 100% blocks executed 100%
+        1:  431:string customer :: get_pass()
+        -:  432:{
+        1:  433:    return pass;
+call    0 returned 1
+        -:  434:}
+        -:  435:
+function _ZN8customer13show_customerEv called 0 returned 0% blocks executed 0%
+    #####:  436:int customer :: show_customer()
+        -:  437:{
+    #####:  438:        cout<<"*********************"<<endl;
+call    0 never executed
+call    1 never executed
+    #####:  439:        cout<<"Customer id : "<<get_id()<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+    #####:  440:        cout<<"Name        : "<<get_name()<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    #####:  441:        cout<<"Email       : "<<get_email()<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    #####:  442:        cout<<"Phone number: "<<get_phone()<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+call    8 never executed
+call    9 never executed
+    #####:  443:        cout<<"*********************"<<endl<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  444:        return 0;
+        -:  445:}
+        -:  446:
+function _ZN5order6get_urEv called 12 returned 100% blocks executed 100%
+       12:  447:int order :: get_ur()
+        -:  448:{
+       12:  449:    return ur;
+        -:  450:}
+        -:  451:
+function _ZN5order7get_pidEv called 6 returned 100% blocks executed 100%
+        6:  452:long long int order :: get_pid()
+        -:  453:{
+        6:  454:    return pid;
+        -:  455:}
+        -:  456:
+function _ZN5order6get_upEv called 12 returned 100% blocks executed 100%
+       12:  457:float order :: get_up()
+        -:  458:{
+       12:  459:    return up;
+        -:  460:}
+        -:  461:
+function _ZN5order9get_pnameB5cxx11Ev called 43 returned 100% blocks executed 100%
+       43:  462:string order :: get_pname()
+        -:  463:{
+       43:  464:    return pname;
+call    0 returned 43
+        -:  465:}
+        -:  466:
+function ZN11final_order10set_statusENSt7_cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 2 returned 100% blocks executed 100%
+        2:  467:int final_order :: set_status(string s)
+        -:  468:{
+        2:  469:    status=s;
+call    0 returned 2
+        2:  470:    return 0;
+        -:  471:}
+        -:  472:
+function _ZN11final_order10get_statusB5cxx11Ev called 2 returned 100% blocks executed 100%
+        2:  473:string final_order :: get_status()
+        -:  474:{
+        2:  475:    return status;
+call    0 returned 2
+        -:  476:}
+        -:  477:
+function _ZN11final_order7get_cidEv called 2 returned 100% blocks executed 100%
+        2:  478:long long int final_order ::get_cid()
+        -:  479:{
+        2:  480:    return cid;
+        -:  481:}
+        -:  482:
+function _ZN11final_order9get_phoneB5cxx11Ev called 2 returned 100% blocks executed 100%
+        2:  483:string final_order ::get_phone()
+        -:  484:{
+        2:  485:    return phone;
+call    0 returned 2
+        -:  486:}
+        -:  487:
+function _ZN11final_order9get_cnameB5cxx11Ev called 2 returned 100% blocks executed 100%
+        2:  488:string final_order ::get_cname()
+        -:  489:{
+        2:  490:    return cname;
+call    0 returned 2
+        -:  491:}
+        -:  492:
+function _ZN11final_order8get_distEv called 2 returned 100% blocks executed 100%
+        2:  493:float final_order ::get_dist()
+        -:  494:{
+        2:  495:    return dist;
+        -:  496:}
+        -:  497:
+function _ZN11final_order12get_order_idEv called 2 returned 100% blocks executed 100%
+        2:  498:long long int final_order ::get_order_id()
+        -:  499:{
+        2:  500:    return order_id;
+        -:  501:}
+        -:  502:
+function _ZN11final_order16show_final_orderEv called 0 returned 0% blocks executed 0%
+    #####:  503:int final_order :: show_final_order()
+        -:  504:{
+        -:  505:
+    #####:  506:    cout<<"***********************************************"<<endl;
+call    0 never executed
+call    1 never executed
+    #####:  507:    cout<<"Order ID : "<<get_order_id()<<"\t\t"<<"Order status : "<< get_status()<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+call   14 never executed
+    #####:  508:    cout<<"Customer Name : "<<get_cname()<<"\t\t"<<"Customer Id : "<<get_cid()<<"\t\t"<<"Phone number : "<<get_phone()<<endl<<endl<<endl<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+call   11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+call   24 never executed
+branch 25 never executed
+branch 26 never executed
+call   27 never executed
+branch 28 never executed
+branch 29 never executed
+call   30 never executed
+branch 31 never executed
+branch 32 never executed
+call   33 never executed
+branch 34 never executed
+branch 35 never executed
+call   36 never executed
+branch 37 never executed
+branch 38 never executed
+call   39 never executed
+call   40 never executed
+call   41 never executed
+call   42 never executed
+call   43 never executed
+    #####:  509:    cout<<"Item no."<<"\t\t"<<"Product ID : "<<"\t\t"<<"Product Name"<<"\t\t"<<"Quantity"<<"\t\t"<<"Unit Price"<<"\t\t"<<"Total price"<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+call    7 never executed
+call    8 never executed
+call    9 never executed
+call   10 never executed
+call   11 never executed
+        -:  510:
+        -:  511:
+        -:  512:
+    #####:  513:    for(int j=0;j<items.size();j++)
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  514:    {
+    #####:  515:         cout<<j+1<<"\t\t\t"<<items[j].get_pid()<<"\t\t\t"<<items[j].get_pname()<<"\t\t\t\t"<<items[j].get_ur()<<"\t\t"<<items[j].get_up()<<"\t\t\t"<<items[j].get_up() * items[j].get_ur()<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+call    7 never executed
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+call   14 never executed
+call   15 never executed
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+call   19 never executed
+branch 20 never executed
+branch 21 never executed
+call   22 never executed
+call   23 never executed
+call   24 never executed
+branch 25 never executed
+branch 26 never executed
+call   27 never executed
+branch 28 never executed
+branch 29 never executed
+call   30 never executed
+call   31 never executed
+call   32 never executed
+call   33 never executed
+call   34 never executed
+branch 35 never executed
+branch 36 never executed
+call   37 never executed
+branch 38 never executed
+branch 39 never executed
+call   40 never executed
+call   41 never executed
+        -:  516:    }
+    #####:  517:        cout<<"                                                                                                                                           Total Payable Amount : Rs. "<<total<<endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  518:
+    #####:  519:}
+        -:  520:
+function _ZN11final_order16get_total_amountEv called 2 returned 100% blocks executed 100%
+        2:  521:float final_order::get_total_amount()
+        -:  522:{
+        2:  523:    return total;
+        -:  524:}
